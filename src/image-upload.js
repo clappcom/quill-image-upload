@@ -3,7 +3,7 @@
  * and paste images from clipboard (Works on Chrome, Firefox, Edge, not on Safari)
  * @see https://quilljs.com/blog/building-a-custom-module/
  */
-export class ImageUpload {
+export default class ImageUpload {
 
 	/**
 	 * Instantiate the module given a quill instance and any options

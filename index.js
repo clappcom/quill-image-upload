@@ -3,7 +3,7 @@
  * and paste images from clipboard (Works on Chrome, Firefox, Edge, not on Safari)
  * @see https://quilljs.com/blog/building-a-custom-module/
  */
-export class ImageUpload {
+export default class ImageUpload {
 
 	/**
 	 * Instantiate the module given a quill instance and any options
@@ -93,7 +93,8 @@ export class ImageUpload {
 	 * @param {String} dataUrl  The base64-encoded image URI
 	 */
 	insert(dataUrl) {
-		const index = (this.quill.getSelection() || {}).index || this.quill.getLength();
+		const selection = this.quill.getSelection();
+    		const index = selection ? selection.index : this.quill.getLength();
 		this.quill.insertEmbed(index, 'image', dataUrl, 'user');
 	}
 
